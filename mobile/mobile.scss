@@ -1,0 +1,118 @@
+// .chat-message-container {
+//   &.is-by-current-user:not(:last-of-type) {
+//     .chat-message:not(.user-info-hidden) {
+//       border-bottom-left-radius: 0;
+//       border-bottom-right-radius: 0;
+//     }
+//   }
+// }
+
+// .chat-message-container.is-by-current-user
+//   ~ .chat-message-container.user-info-hidden {
+//   .chat-message {
+//     margin-block: 0;
+//   }
+// }
+
+// .chat-message-container.is-by-current-user
+//   + .chat-message-container.is-by-current-user {
+//   .chat-message {
+//     margin-block: 0;
+//   }
+// }
+
+.chat-messages-container {
+  padding: 0;
+  // background-image: url($chat-background);
+}
+
+.chat-message-container {
+  padding: 0;
+  &.is-by-current-user {
+    // grid-template-areas: "message" "timestamp";
+    justify-content: end;
+    margin-left: auto;
+  }
+}
+
+.chat-message {
+  margin-block: 0.5rem;
+  padding: 0.25rem !important;
+  background: transparent;
+
+  .is-by-current-user & {
+    justify-content: flex-end;
+  }
+
+  .chat-message-avatar {
+  }
+
+  .chat-message-content {
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 76%;
+    padding: 0.25rem 0.75rem;
+    background: var(--primary-very-low);
+    border-radius: 10px;
+
+    .is-by-current-user & {
+      background: rgb(221, 249, 211);
+
+      .chat-message-left-gutter {
+        display: none;
+      }
+    }
+  }
+
+  .chat-message-reaction-list {
+    transform: translateY(50%);
+  }
+
+  .chat-message-reaction,
+  .chat-message-reaction.reacted {
+    border-color: var(--primary-low);
+    background: var(--secondary);
+    border-radius: 20px;
+
+    .count {
+      color: var(--primary-medium);
+    }
+  }
+
+  .chat-message-text {
+    width: unset;
+  }
+
+  // &.user-info-hidden {
+  //   margin-top: -0.5rem;
+  //   border-top-left-radius: 0;
+  //   border-top-right-radius: 0;
+  // }
+}
+
+.chat-message-avatar,
+.chat-message-info__username {
+  .is-by-current-user & {
+    display: none;
+  }
+}
+
+.chat-message-info {
+  width: 100%;
+  &__date {
+    // grid-area: timestamp;
+    margin-left: auto !important;
+
+    align-self: flex-start;
+    .user-info-hidden & {
+      margin-left: 1rem !important;
+    }
+  }
+  &__username {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.chat-time {
+  color: var(--primary-medium);
+}
