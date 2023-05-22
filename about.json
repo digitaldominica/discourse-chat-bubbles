@@ -2,7 +2,7 @@
   "about_url": null,
   "license_url": null,
   "assets": {
-    "chat-background": "/assets/discapp-bg.png"
+    "chat-background": "/assets/circuit-board.svg"
   },
   "name": "chat-bubbles",
   "component": true
