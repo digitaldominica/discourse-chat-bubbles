@@ -1,7 +1,3 @@
-// :root {
-//   --tertiary: $light_bubble_color_1;
-// }
-
 .full-page-chat .chat-full-page-header {
   background: var(--primary-very-low);
 }
@@ -44,10 +40,18 @@
   }
 }
 
+@function check-empty($variable) {
+  @if $variable != "" {
+    @return $variable;
+  } @else {
+    @return $chat-background;
+  }
+}
+
 .chat-messages-container {
   padding: 0;
   background-color: var(--background-color); // #fff8eb;
-  background-image: $background-pattern; //url($chat-background);
+  background-image: url(check-empty($background-pattern));
 
   &.is-by-current-user {
     justify-content: end;

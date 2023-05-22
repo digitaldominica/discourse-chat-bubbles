@@ -13,4 +13,4 @@ background_color:
 background_pattern:
   default: ""
   type: upload
-  description: Background pattern for the chat window, works best with SVGs.
+  description: Background pattern for the chat window, works best with SVGs. If you want to use an image instead, make sure it's optimised for mobile device viewport.
