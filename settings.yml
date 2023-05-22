@@ -1,0 +1,16 @@
+light_bubble_color_1:
+  default: "#ddf9d3"
+  type: string
+  description: Chat bubble color for you, used in the the light scheme.
+light_bubble_color_2:
+  default: "#FFFFFF"
+  type: string
+  description: Chat bubble color for others, used in the light scheme.
+background_color:
+  default: "#fff8eb"
+  type: string
+  description: Background color for the chat window.
+background_pattern:
+  default: ""
+  type: upload
+  description: Background pattern for the chat window, works best with SVGs.

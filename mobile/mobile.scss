@@ -1,3 +1,7 @@
+// :root {
+//   --tertiary: $light_bubble_color_1;
+// }
+
 .full-page-chat .chat-full-page-header {
   background: var(--primary-very-low);
 }
@@ -42,8 +46,8 @@
 
 .chat-messages-container {
   padding: 0;
-  background-color: #fff8eb;
-  background-image: url($chat-background);
+  background-color: var(--background-color); // #fff8eb;
+  background-image: $background-pattern; //url($chat-background);
 
   &.is-by-current-user {
     justify-content: end;
@@ -66,12 +70,12 @@
     flex-grow: unset;
     max-width: 76%;
     padding: 0.25rem 0.75rem;
-    background: var(--secondary);
+    background: var(--light-bubble-color-2);
     border-radius: 10px;
-    box-shadow: 0px 1px 0px #d1cfc9;
+    box-shadow: 0px 1px 0px var(--primary-low-mid);
 
     .is-by-current-user & {
-      background: rgb(221, 249, 211);
+      background: var(--light-bubble-color-1); //rgb(221, 249, 211);
       justify-content: flex-end;
     }
   }
