@@ -57,6 +57,14 @@
     justify-content: end;
     margin-left: auto;
   }
+
+  .chat-message.chat-message-bookmarked {
+    background: initial;
+
+    .chat-message-content {
+      background: var(--highlight-bg);
+    }
+  }
 }
 
 .chat-message {
@@ -120,29 +128,41 @@
     }
   }
 
-  .chat-message-info {
-    &__date {
-      margin-left: auto !important;
-      align-self: flex-start;
-    }
-    &__username {
-      margin-bottom: 0.5rem;
-    }
-
-    :not(.is-by-current-user) & {
-      margin-left: auto;
-      width: 100%;
-    }
-
-    .is-by-current-user & {
-      width: unset;
-      margin-left: 0.5rem;
-      order: 1;
-      align-self: flex-end;
-    }
-  }
-
   .chat-time {
     color: var(--primary-medium);
+  }
+}
+
+.chat-message-info {
+  &__date {
+    order: 1;
+    align-self: flex-start;
+    margin-left: auto !important;
+    .chat-message-bookmarked & {
+      margin-left: 0.5rem !important;
+    }
+  }
+  &__bookmark {
+    align-self: flex-start;
+    margin-left: 0.25rem;
+
+    .chat-message-bookmarked & {
+      margin-left: auto;
+    }
+  }
+  &__username {
+    margin-bottom: 0.5rem;
+  }
+
+  :not(.is-by-current-user) & {
+    margin-left: auto;
+    width: 100%;
+  }
+
+  .is-by-current-user & {
+    width: unset;
+    margin-left: 0.5rem;
+    order: 1;
+    align-self: flex-end;
   }
 }
