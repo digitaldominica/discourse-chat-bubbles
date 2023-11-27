@@ -50,7 +50,7 @@
 
 .chat-messages-container {
   padding: 0;
-  background-color: var(--background-color); // #fff8eb;
+  background-color: var(--background-color);
   background-image: url(check-empty($background-pattern));
 
   &.is-by-current-user {
@@ -74,6 +74,10 @@
 
   .is-by-current-user & {
     justify-content: flex-end;
+  }
+
+  &-container {
+    background: rgba(0, 0, 0, 0);
   }
 
   .chat-message-content {
@@ -165,4 +169,8 @@
     order: 1;
     align-self: flex-end;
   }
+}
+
+.chat-thread__body {
+  padding: 0;
 }
