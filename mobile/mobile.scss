@@ -135,6 +135,14 @@
   .chat-time {
     color: var(--primary-medium);
   }
+
+  .onebox {
+    container-type: normal;
+
+    .aspect-image {
+      max-width: unset;
+    }
+  }
 }
 
 .chat-message-info {
