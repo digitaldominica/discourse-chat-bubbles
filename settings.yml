@@ -11,11 +11,15 @@ dark_bubble_color_1:
   type: string
   description: Chat bubble color for you, used in the the dark scheme.
 dark_bubble_color_2:
-  default: "#000000"
+  default: "#363638"
   type: string
   description: Chat bubble color for others, used in the dark scheme.
-background_color:
+light_background_color:
   default: "#fff8eb"
+  type: string
+  description: Background color for the chat window.
+dark_background_color:
+  default: "#0F1216"
   type: string
   description: Background color for the chat window.
 background_pattern:

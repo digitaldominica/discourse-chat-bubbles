@@ -1,14 +1,45 @@
-$bubble-background-1: dark-light-choose(
+@function dark-light-fallback($light-color, $dark-color, $fallback-color) {
+  @if ($light-color != "") and ($dark-color != "") {
+    $chosen-color: dark-light-choose($light-color, $dark-color);
+    @return $chosen-color;
+  } @else {
+    @return $fallback-color;
+  }
+}
+
+@function background-blend() {
+  @if (is-dark-color-scheme()) {
+    @debug "ok";
+    @return "overlay";
+  } @else {
+    @return "normal";
+  }
+}
+
+$bubble-background-1: dark-light-fallback(
   $light-bubble-color-1,
-  $dark-bubble-color-1
+  $dark-bubble-color-1,
+  var(--tertiary-low)
 );
 
-$bubble-background-2: dark-light-choose(
+$bubble-background-2: dark-light-fallback(
   $light-bubble-color-2,
-  $dark-bubble-color-2
+  $dark-bubble-color-2,
+  var(--secondary)
 );
+
+$bubble-background: dark-light-fallback(
+  $light_background_color,
+  $dark_background_color,
+  var(--primary-high)
+);
+
+$background-mode: background-blend();
+@debug $background-mode;
 
 :root {
   --bubble-bg-1: #{$bubble-background-1};
   --bubble-bg-2: #{$bubble-background-2};
+  --bubble-bg: #{$bubble-background};
+  --bubble-bg-mode: #{$background-mode};
 }
