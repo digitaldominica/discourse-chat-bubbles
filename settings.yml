@@ -6,6 +6,14 @@ light_bubble_color_2:
   default: "#FFFFFF"
   type: string
   description: Chat bubble color for others, used in the light scheme.
+dark_bubble_color_1:
+  default: "#215046"
+  type: string
+  description: Chat bubble color for you, used in the the dark scheme.
+dark_bubble_color_2:
+  default: "#000000"
+  type: string
+  description: Chat bubble color for others, used in the dark scheme.
 background_color:
   default: "#fff8eb"
   type: string

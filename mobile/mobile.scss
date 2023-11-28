@@ -1,3 +1,19 @@
+@function dark-light-fallback($light-color, $dark-color, $fallback-color) {
+  $chosen-color: dark-light-choose($light-color, $dark-color);
+
+  @return $chosen-color;
+
+  // @if $chosen-color {
+  //   @return $chosen-color;
+  // } @else if $fallback-color {
+  //   @return $fallback-color;
+  // } @else {
+  //   @return var(
+  //     --primary-medium
+  //   ); // Return null or handle the case without any color as needed
+  // }
+}
+
 .full-page-chat .chat-full-page-header {
   background: var(--primary-very-low);
 }
@@ -86,12 +102,20 @@
     flex-grow: unset;
     max-width: 76%;
     padding: 0.25rem 0.75rem;
-    background: var(--light-bubble-color-2);
+    // background: dark-light-fallback(
+    //   $dark-bubble-color-2,
+    //   $light-bubble-color-2,
+    //   var(--primary)
+    // );
     border-radius: 10px;
     box-shadow: 0px 1px 0px var(--primary-low-mid);
 
+    :not(.is-by-current-user) & {
+      background: var(--bubble-bg-2);
+    }
+
     .is-by-current-user & {
-      background: var(--light-bubble-color-1); //rgb(221, 249, 211);
+      background: var(--bubble-bg-1);
       justify-content: flex-end;
     }
   }
@@ -179,6 +203,8 @@
   }
 }
 
-.chat-thread__body {
-  padding: 0;
+.chat-thread {
+  &__body.chat-messages-scroll {
+    padding: 0;
+  }
 }

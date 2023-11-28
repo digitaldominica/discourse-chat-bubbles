@@ -1,0 +1,14 @@
+$bubble-background-1: dark-light-choose(
+  $light-bubble-color-1,
+  $dark-bubble-color-1
+);
+
+$bubble-background-2: dark-light-choose(
+  $light-bubble-color-2,
+  $dark-bubble-color-2
+);
+
+:root {
+  --bubble-bg-1: #{$bubble-background-1};
+  --bubble-bg-2: #{$bubble-background-2};
+}
