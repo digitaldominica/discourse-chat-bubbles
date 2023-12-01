@@ -9,7 +9,6 @@
 
 @function background-blend() {
   @if (is-dark-color-scheme()) {
-    @debug "ok";
     @return "overlay";
   } @else {
     @return "normal";
@@ -31,11 +30,10 @@ $bubble-background-2: dark-light-fallback(
 $bubble-background: dark-light-fallback(
   $light_background_color,
   $dark_background_color,
-  var(--primary-high)
+  var(--secondary-very-high)
 );
 
 $background-mode: background-blend();
-@debug $background-mode;
 
 :root {
   --bubble-bg-1: #{$bubble-background-1};
