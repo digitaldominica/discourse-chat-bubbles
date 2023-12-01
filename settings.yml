@@ -22,6 +22,10 @@ dark_background_color:
   default: "#0F1216"
   type: string
   description: Background color for the chat window.
+enable_pattern:
+  default: true
+  type: bool
+  description: Enable background pattern for the chat window.
 background_pattern:
   default: ""
   type: upload

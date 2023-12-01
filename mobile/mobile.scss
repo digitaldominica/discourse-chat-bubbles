@@ -40,18 +40,22 @@
   }
 }
 
-@function check-empty($variable) {
-  @if $variable != "" {
-    @return $variable;
+@function check-empty($variable, $enable_pattern) {
+  @if ($enable_pattern == "true") {
+    @if ($variable != "") {
+      @return $variable;
+    } @else {
+      @return $chat-background;
+    }
   } @else {
-    @return $chat-background;
+    @return "none";
   }
 }
 
 .chat-messages-container {
   padding: 0;
   background-color: var(--bubble-bg);
-  background-image: url(check-empty($background-pattern));
+  background-image: url(check-empty($background-pattern, $enable_pattern));
   background-blend-mode: var(--bubble-bg-mode);
 
   &.is-by-current-user {
@@ -87,11 +91,6 @@
     flex-grow: unset;
     max-width: 76%;
     padding: 0.25rem 0.75rem;
-    // background: dark-light-fallback(
-    //   $dark-bubble-color-2,
-    //   $light-bubble-color-2,
-    //   var(--primary)
-    // );
     border-radius: 10px;
     box-shadow: 0px 1px 0px var(--primary-low-mid);
 
